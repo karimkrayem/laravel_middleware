@@ -21,23 +21,23 @@ class UserSeeder extends Seeder
                 [
 
                     'name' => 'karim',
-                    'email' => 'koko@kokffazzo.com',
+                    'email' => 'koko@koko.com',
                     'password' => Hash::make('koko@koko.com'),
                     'role_id' => 1,
                 ],
                 [
 
-                    'name' => 'kzfzfarim',
+                    'name' => 'koko',
                     'email' => 'koko@kokffffffo.com',
                     'password' => Hash::make('koko@koko.com'),
                     'role_id' => 2,
                 ],
                 [
 
-                    'name' => 'karezzzzzzzzim',
-                    'email' => 'koko@kzefzfoko.com',
+                    'name' => 'naho',
+                    'email' => 'koko@karim.com',
                     'password' => Hash::make('koko@koko.com'),
-                    'role_id' => 2,
+                    'role_id' => 3,
                 ]
             ]
         );

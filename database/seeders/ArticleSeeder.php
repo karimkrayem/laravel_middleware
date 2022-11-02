@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ArticleSeeder extends Seeder
 {
@@ -14,6 +15,17 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('articles')->insert([
+            [
+                'text' => 'Ceci est un texte',
+                'title' => 'Title',
+                'user_id' => 1,
+            ],
+            [
+                'text' => 'Ceci est un texte',
+                'title' => 'test',
+                'user_id' => 2,
+            ]
+        ]);
     }
 }

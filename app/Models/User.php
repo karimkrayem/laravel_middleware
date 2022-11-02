@@ -22,6 +22,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
     protected $fillable = [
         'name',
         'email',

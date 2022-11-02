@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BackofficeController;
+use Database\Seeders\ArticleSeeder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/article', [ArticleController::class, 'index']);
+
+Route::get('/backoff', [BackofficeController::class, 'index']);
+Route::get('/newarticle', [ArticleController::class, 'create'])->name('newarticle');
+Route::post('/newarticle/store/', [ArticleController::class, 'store']);
+
+Route::delete('/article/delete/{id}', [ArticleController::class, 'destroy']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('isConnected')->name('dashboard');
