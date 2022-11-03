@@ -11,7 +11,8 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only('index');
-        $this->middleware('isWebmaster')->only('create', 'edit');
+        $this->middleware('isWebmaster')->only('create', 'edit', 'delete', 'update');
+        // $this->middleware('isRedacteur')->only('destroy', 'create', 'edit');
     }
     public function index()
     {

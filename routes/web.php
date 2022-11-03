@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/fullarticle/{id}', [ArticleController::class, 'show']);
 Route::put('/article/update/{id}', [ArticleController::class, 'update']);
-Route::get('/article/edit/{id}', [ArticleController::class, 'edit']);
+Route::get('/article/edit/{id}', [ArticleController::class, 'edit'])->middleware('isRedacteur');
 Route::get('/backoff', [BackofficeController::class, 'index'])->name('backoff');
 Route::get('/newarticle', [ArticleController::class, 'create'])->name('newarticle');
 Route::post('/newarticle/store/', [ArticleController::class, 'store']);

@@ -1,4 +1,3 @@
 @component('layouts.app')
-@include('partials.createArticle')
-    
+    @include('partials.createArticle')
 @endcomponent
