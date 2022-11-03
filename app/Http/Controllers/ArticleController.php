@@ -47,4 +47,21 @@ class ArticleController extends Controller
         $article = Article::find($id);
         return view('pages.fullarticle', compact('article'));
     }
+
+    public function edit($id)
+    {
+        $articles = Article::find($id);
+        $users = User::all();
+        return view('pages.editarticle', compact('articles', 'users'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $update = article::find($id);
+        $update->title = $request->title;
+        $update->user_id = $request->user_id;
+        $update->text = $request->text;
+        $update->save();
+        return redirect('/backoff');
+    }
 }
