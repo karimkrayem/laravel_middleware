@@ -10,7 +10,7 @@ class BackofficeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['isAdmin'])->only('index');
+        $this->middleware('isWebmaster')->only('index');
     }
 
     public function index()

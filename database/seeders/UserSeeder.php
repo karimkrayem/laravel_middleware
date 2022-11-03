@@ -38,6 +38,13 @@ class UserSeeder extends Seeder
                     'email' => 'koko@karim.com',
                     'password' => Hash::make('koko@koko.com'),
                     'role_id' => 3,
+                ],
+                [
+
+                    'name' => 'webmaster',
+                    'email' => 'web@karim.com',
+                    'password' => Hash::make('koko@koko.com'),
+                    'role_id' => 4,
                 ]
             ]
         );

@@ -11,11 +11,13 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only('index');
+        $this->middleware('isWebmaster')->only('create', 'edit');
     }
     public function index()
     {
-        $articles = User::all();
-        return view('pages.articles', compact('articles'));
+        $articles = Article::all();
+        $users = User::all();
+        return view('pages.articles', compact('articles', 'users'));
     }
 
     public function create()
@@ -30,7 +32,6 @@ class ArticleController extends Controller
         $store->text = $request->text;
         $store->title = $request->title;
         $store->user_id = $request->user_id;
-
         $store->save();
         return redirect('/backoff');
     }
