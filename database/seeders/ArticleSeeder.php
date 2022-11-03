@@ -23,8 +23,23 @@ class ArticleSeeder extends Seeder
             ],
             [
                 'text' => 'Ceci est un texte',
+                'title' => 'Title',
+                'user_id' => 1,
+            ],
+            [
+                'text' => 'Ceci est un texte',
+                'title' => 'Title',
+                'user_id' => 3,
+            ],
+            [
+                'text' => 'Ceci est un texte',
                 'title' => 'test',
                 'user_id' => 2,
+            ],
+            [
+                'text' => 'Ceci est un texte',
+                'title' => 'test',
+                'user_id' => 5,
             ],
             [
                 'text' => 'Ceci est un texte',

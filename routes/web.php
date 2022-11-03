@@ -22,19 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/article', [ArticleController::class, 'index']);
+Route::get('/article', [ArticleController::class, 'index'])->name('article');
 Route::get('/fullarticle/{id}', [ArticleController::class, 'show']);
 Route::put('/article/update/{id}', [ArticleController::class, 'update']);
-Route::get('/article/edit/{id}', [ArticleController::class, 'edit'])->middleware('isRedacteur');
+Route::get('/article/edit/{id}', [ArticleController::class, 'edit']);
 Route::get('/backoff', [BackofficeController::class, 'index'])->name('backoff');
 Route::get('/newarticle', [ArticleController::class, 'create'])->name('newarticle');
 Route::post('/newarticle/store/', [ArticleController::class, 'store']);
-
 Route::delete('/article/delete/{id}', [ArticleController::class, 'destroy']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('isConnected')->name('dashboard');
-
-Route::get('/admin', [UserController::class, 'index'])->middleware('isAdmin');
+Route::get('/admin', [UserController::class, 'index'])->name('admin');
 
 require __DIR__ . '/auth.php';

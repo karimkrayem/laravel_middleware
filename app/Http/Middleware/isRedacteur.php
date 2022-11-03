@@ -18,12 +18,16 @@ class isRedacteur
      */
     public function handle(Request $request, Closure $next)
     {
+        $request->route();
         $id = $request->route()->parameters()['id'];
         $article = Article::find($id);
+        $user_id = Article::find($request->route()->parameters()['id'])->user_id;
 
-        if ($request->user()->role_id == 5 && ($request->user()->id == $article->user_id)) {
+        if (Auth::user()->id == $user_id) {
             // dd($request->route());
             return $next($request);
+        } else {
+            return redirect()->back();
         }
     }
 }
