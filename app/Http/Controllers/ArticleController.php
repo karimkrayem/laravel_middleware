@@ -41,4 +41,10 @@ class ArticleController extends Controller
         $delete->delete();
         return redirect()->back();
     }
+
+    public function show($id)
+    {
+        $article = Article::find($id);
+        return view('pages.fullarticle', compact('article'));
+    }
 }
